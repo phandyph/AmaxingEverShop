@@ -1,3 +1,49 @@
-.kids {
-  color: blue;
+.userPreferenceContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.userPreference {
+  width: 60%;
+  margin: auto;
+}
+
+.contentContainer {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actionContainer {
+  width: 30%;
+}
+
+.displayCardContainer {
+  width: 70%;
+}
+
+.userPreCardsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  grid-auto-rows: maxmax(200px, auto);
+}
+
+.shopBy,
+.sortBy {
+  padding: 15px 0;
+}
+
+.sortBy, span {
+  margin-right: 8px;
+}
+
+.sortContainer {
+  display: flex;
+  width: 100%;
+  align-content: center;
+  justify-content: end;
 }

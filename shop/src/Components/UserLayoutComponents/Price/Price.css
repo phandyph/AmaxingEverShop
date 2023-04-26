@@ -1,0 +1,16 @@
+.minPriceRange,
+.maxPriceRange {
+  height: 0.1vh;
+  z-index: 5;
+  width: 100%;
+}
+
+.priceRangeContainer {
+  width: 100%;
+  height: 10vh;
+}
+
+.priceRanges {
+  position: relative;
+  display: inline-block;
+}

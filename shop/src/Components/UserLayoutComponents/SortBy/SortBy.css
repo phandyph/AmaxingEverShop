@@ -1,0 +1,23 @@
+select {
+  appearance: none;
+  padding: 0 5px;
+  outline: none;
+  border: none;
+  background-color: #fff;
+}
+
+.select {
+  display: flex;
+  border: 1px solid gainsboro;
+  border-radius: 4px;
+}
+
+.sortContainer {
+  margin: 5px 0;
+  display: flex;
+  align-content: center;
+}
+
+.selectIcon {
+  padding: 12px 0 5px 0;
+}
