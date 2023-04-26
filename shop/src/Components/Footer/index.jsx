@@ -3,18 +3,14 @@ import VisaIcon from "../../Assets/Icons/VisaIcon";
 import MastercardIcon from "../../Assets/Icons/MastercardIcon";
 import PaypalIcon from "../../Assets/Icons/PaypalIcon";
 
-const SYMBOLS = [
-  { symbol: <VisaIcon /> },
-  { symbol: <MastercardIcon /> },
-  { symbol: <PaypalIcon /> },
-];
+const ICONS = [<VisaIcon />, <MastercardIcon />, <PaypalIcon />];
 const Footer = () => {
   return (
     <div className="footerContainer">
       <div className="footer">
         <div className="symbols">
-          {SYMBOLS.map((eachSymbol) => {
-            return <div>{eachSymbol.symbol}</div>;
+          {ICONS.map((icon) => {
+            return <div>{icon}</div>;
           })}
         </div>
 

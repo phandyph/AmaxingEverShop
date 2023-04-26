@@ -1,11 +1,12 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import HomePage from "../Pages/HomePage";
-import MenPage from "../Pages/MenPage";
-import KidsPage from "../Pages/KidsPage";
-import WomenPage from "../Pages/WomenPage";
-import StorePage from "../Pages/StorePage";
-import LoginPage from "../Pages/LoginPage";
 import "./Routes.css";
+import React from "react";
+const HomePage = React.lazy(() => import("../Pages/HomePage"));
+const MenPage = React.lazy(() => import("../Pages/MenPage"));
+const KidsPage = React.lazy(() => import("../Pages/KidsPage"));
+const WomenPage = React.lazy(() => import("../Pages/WomenPage"));
+const StorePage = React.lazy(() => import("../Pages/StorePage"));
+const LoginPage = React.lazy(() => import("../Pages/LoginPage"));
 
 const allPages = [
   { path: "/", component: <HomePage /> },

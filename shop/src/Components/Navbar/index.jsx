@@ -1,21 +1,22 @@
-import Logo from "../../Assets/Icons/Logo";
+import LogoIcon from "../../Assets/Icons/LogoIcon";
 import StoreIcon from "../../Assets/Icons/StoreIcon";
 import LoginIcon from "../../Assets/Icons/LoginIcon";
 import HumbergerIcon from "../../Assets/Icons/HumbergerIcon";
 import MobileMenu from "../MobileMenu";
+
 import "./Navbar.css";
 import { BrowserRouter as Router, NavLink } from "react-router-dom";
 import useIsOnMobile from "../../hooks/useIsOnMobile";
 import { useState } from "react";
 import { useEffect } from "react";
 const USER_MAIN_MENU = [
-  { path: "/men", link: "men" },
-  { path: "/kids", link: "kids" },
-  { path: "/women", link: "women" },
+  { path: "/men", label: "men" },
+  { path: "/kids", label: "kids" },
+  { path: "/women", label: "women" },
 ];
 const ICONS = [
-  { path: "/store", component: <StoreIcon /> },
-  { path: "/login", component: <LoginIcon /> },
+  { path: "/store", icon: <StoreIcon /> },
+  { path: "/login", icon: <LoginIcon /> },
 ];
 
 const Navbar = () => {
@@ -37,10 +38,10 @@ const Navbar = () => {
       <Router>
         <div className="navbar">
           <NavLink reloadDocument activeclassname="active" to="/">
-            <Logo />
+            <LogoIcon />
           </NavLink>
 
-          <ul className={onMobile ? "hide" : "userPreferencesMenu"}>
+          <ul className={onMobile ? "hideMobileMenu" : "showMobileMenu"}>
             {USER_MAIN_MENU.map((menu) => {
               return (
                 <li>
@@ -50,7 +51,7 @@ const Navbar = () => {
                     className="navlink"
                     to={menu.path}
                   >
-                    {menu.link}
+                    {menu.label}
                   </NavLink>
                 </li>
               );
@@ -59,28 +60,25 @@ const Navbar = () => {
 
           <div className="icons">
             <>
-              {ICONS.map((icon) => {
+              {ICONS.map((menu) => {
                 return (
                   <NavLink
                     reloadDocument
                     activeclassname="active"
-                    to={icon.path}
+                    to={menu.path}
                   >
-                    {icon.component}
+                    {menu.icon}
                   </NavLink>
                 );
               })}
 
               <NavLink
                 onClick={onHumbergerHandle}
-                className={onMobile ? "show" : "hideElement"}
+                className={onMobile ? "showHumbergerIcon" : ""}
               >
                 <HumbergerIcon />
               </NavLink>
-              <MobileMenu
-                isMenuOpen={isMenuOpen}
-                USER_MAIN_MENU={USER_MAIN_MENU}
-              />
+              <MobileMenu isMenuOpen={isMenuOpen} mobileMenu={USER_MAIN_MENU} />
             </>
           </div>
         </div>

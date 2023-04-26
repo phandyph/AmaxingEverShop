@@ -1,4 +1,4 @@
-export default function LoginIcon() {
+export default function MastercardIcon() {
   return (
     <svg
       className="graphicSymbol"

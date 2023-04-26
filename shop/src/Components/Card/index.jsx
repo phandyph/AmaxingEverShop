@@ -1,12 +1,11 @@
-import {NavLink} from "react-router-dom"
+import { NavLink } from "react-router-dom";
 import "./Card.css";
+const IMG_CARD =
+  "https://demo.evershop.io/assets/homepage/banner/men-shoes.jpeg";
 const Card = () => {
   return (
     <div className="cardContainer">
-      <img
-        src="https://demo.evershop.io/assets/homepage/banner/men-shoes.jpeg"
-        alt=""
-      />
+      <img src={IMG_CARD} alt="" />
 
       <div className="textContainer">
         <p className="primaryText">MEN SHOES COLLECTION</p>
@@ -17,7 +16,9 @@ const Card = () => {
         </p>
       </div>
       <button className="cardBtn">
-        <NavLink className="btnLink" to="/kids">Shop Kids</NavLink>
+        <NavLink className="btnLink" to="/kids">
+          Shop Kids
+        </NavLink>
       </button>
     </div>
   );

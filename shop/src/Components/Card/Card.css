@@ -21,10 +21,10 @@ img {
   width: 50%;
   font-weight: bold;
   padding: 8px;
-  background-color: rgba(0, 0, 0, 0.783);
+  background-color: rgb(0, 0, 0, 0.783);
   color: rgb(246, 238, 238);
 }
 
 .btnLink {
-  color: #fff;
+  color: rgb(255,255,255);
 }

@@ -1,4 +1,5 @@
-export default function LoginIcon() {
+export default function VisaIcon() {
+  const SH = ""
   return (
     <svg
       className="graphicSymbol"
