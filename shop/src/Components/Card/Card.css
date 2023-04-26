@@ -1,0 +1,26 @@
+.cardContainer {
+  width: 100%;
+}
+
+.cardContainer,
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.primaryText {
+  font-size: 1.5rem;
+}
+
+.secondaryText {
+  line-height: 1.8rem;
+}
+
+.cardBtn {
+  margin-top: 10px;
+  width: 50%;
+  font-weight: bold;
+  padding: 8px;
+  background-color: rgba(0, 0, 0, 0.783);
+  color: rgb(246, 238, 238);
+}

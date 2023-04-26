@@ -1,0 +1,15 @@
+.homePageContainer {
+  width: 60%;
+  margin: auto;
+  margin-bottom: 60px;
+}
+
+.featureProducts {
+  text-align: center;
+  font-size: 1.2rem;
+  margin: 40px 0;
+}
+
+.featureImg {
+  background-color: rgb(247, 245, 242);
+}
