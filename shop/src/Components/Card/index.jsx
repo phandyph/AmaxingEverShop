@@ -1,5 +1,5 @@
+import {NavLink} from "react-router-dom"
 import "./Card.css";
-
 const Card = () => {
   return (
     <div className="cardContainer">
@@ -16,7 +16,9 @@ const Card = () => {
           antimicrobial linings, and more.
         </p>
       </div>
-      <button className="cardBtn">SHOP KIDS</button>
+      <button className="cardBtn">
+        <NavLink className="btnLink" to="/kids">Shop Kids</NavLink>
+      </button>
     </div>
   );
 };
