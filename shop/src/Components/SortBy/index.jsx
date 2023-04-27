@@ -1,5 +1,5 @@
-import "./SortBy.css";
-import SelectIcon from "../../../Assets/Icons/SelectIcon";
+import "./SortBy.scss";
+import SelectIcon from "../../Assets/Icons/SelectIcon";
 const SortBy = ({ sortList }) => {
   return (
     <div className="sortAction">

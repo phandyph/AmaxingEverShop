@@ -9,9 +9,9 @@ import useIsOnMobile from "../../hooks/useIsOnMobile";
 import { useState } from "react";
 import { useEffect } from "react";
 const USER_MAIN_MENU = [
-  { path: "/men", link: "men" },
   { path: "/kids", link: "kids" },
   { path: "/women", link: "women" },
+  { path: "/men", link: "men" },
 ];
 const ICONS = [
   { path: "/store", component: <StoreIcon /> },
