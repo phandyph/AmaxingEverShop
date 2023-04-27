@@ -1,0 +1,26 @@
+[
+    {
+      "id": "1",
+      "label": "Shop Kids",
+      "img": "https://demo.evershop.io/assets/homepage/banner/men-shoes.jpeg",
+      "path": "/kids",
+      "title": "KIDS SHOES COLLECTION",
+      "desc": "Constructed from luxury nylons, leathers, and custom hardware, featuring sport details such as hidden breathing vents, waterproof + antimicrobial linings, and more."
+    },
+    {
+      "id": "2",
+      "label": "Shop Women",
+      "img": "https://demo.evershop.io/assets/homepage/banner/women-shoes.jpeg",
+      "path": "/women",
+      "title": "WOMEN SHOES COLLECTION",
+      "desc": "Constructed from luxury nylons, leathers, and custom hardware, featuring sport details such as hidden breathing vents, waterproof + antimicrobial linings, and more."
+    },
+    {
+      "id": "3",
+      "label": "Shop Men",
+      "img": "https://demo.evershop.io/assets/homepage/banner/kid-shoes.jpeg",
+      "path": "/men",
+      "title": "MEN SHOES COLLECTION",
+      "desc": "Constructed from luxury nylons, leathers, and custom hardware, featuring sport details such as hidden breathing vents, waterproof + antimicrobial linings, and more."
+    }
+  ]

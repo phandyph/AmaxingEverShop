@@ -2,16 +2,15 @@ import "./HomePage.css";
 import Banner from "../../Components/Banner";
 import Card from "../../Components/Card";
 import FeatureCard from "../../Components/FeatureCard";
+import homePageCardContent from "../../Data/homePageCardContent.json";
 const HomePage = () => {
   return (
     <div>
       <Banner />
       <div className="homePageContainer">
         <div className="cardsContainer">
-          {/* Just layout, not include with data yet. */}
-          <Card />
-          <Card />
-          <Card />
+          <Card imgAndPathOfHomeCard={homePageCardContent} />
+          {/* Nothing change on it, that's why just display it and change routes. */}
         </div>
 
         <div className="featureProducts">

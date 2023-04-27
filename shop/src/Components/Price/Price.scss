@@ -1,3 +1,6 @@
+$sliderTrackBg: rgb(57, 56, 56);
+$sliderRangeBg: rgb(0, 0, 0);
+
 .slider {
   position: relative;
   width: 95%;
@@ -15,13 +18,13 @@
 }
 
 .sliderTrack {
-  background-color: rgb(57, 56, 56);
+  background-color: $sliderTrackBg;
   width: 100%;
   z-index: 1;
 }
 
 .sliderRange {
-  background-color: rgb(0, 0, 0);
+  background-color: $sliderRangeBg;
   z-index: 2;
 }
 
@@ -60,6 +63,7 @@
   position: relative;
 }
 
-.price, span {
+.price,
+span {
   margin-bottom: 15px;
 }
