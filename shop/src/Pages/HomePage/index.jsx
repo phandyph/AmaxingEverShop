@@ -3,7 +3,9 @@ import Banner from "../../Components/Banner";
 import Card from "../../Components/Card";
 import FeatureCard from "../../Components/FeatureCard";
 import homePageCardContent from "../../Data/homePageCardContent.json";
+import shop from "../../Data/shop.json";
 const HomePage = () => {
+  console.log(shop[0])
   return (
     <div>
       <Banner />
