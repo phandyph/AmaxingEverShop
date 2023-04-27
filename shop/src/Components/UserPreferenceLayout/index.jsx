@@ -5,7 +5,7 @@ import sortList from "../../Data/sortList.json";
 import UserPreferenceCards from "../UserPrefereneCards";
 import "./UserPrefereneLayout.scss";
 
-const UserPreferenceLayout = ({bannerTitle}) => {
+const UserPreferenceLayout = ({ bannerTitle }) => {
   return (
     <div className="userPreferenceContainer">
       <div className="userPreference">

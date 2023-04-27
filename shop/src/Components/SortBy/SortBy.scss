@@ -12,7 +12,7 @@ select {
 .select {
   height: 4vh;
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   align-items: center;
   border: 1px solid $gainsboroColor;
   border-radius: 4px;
