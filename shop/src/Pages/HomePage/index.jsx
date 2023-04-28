@@ -12,7 +12,11 @@ const HomePage = () => {
           {homePageCardContent.length > 0 ? (
             <Card imgAndPathOfHomeCard={homePageCardContent} />
           ) : (
-            <></>
+            <div className="errorInfo">
+              <span>
+                Opps! No Data Available! Let's double check. Thank You!
+              </span>
+            </div>
           )}
         </div>
 
