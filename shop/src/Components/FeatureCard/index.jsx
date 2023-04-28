@@ -1,15 +1,37 @@
 import "./FeatureCard.scss";
-const IMG =
-  "https://demo.evershop.io/assets/catalog/1034/3600/plv7632-Green-list.png";
-const FeatureCard = () => {
+const FeatureCard = ({ shop }) => {
+   // convert from riels to dollar.
+  function convertToDolar(price) {
+    return price / 4000;
+  }
+
   return (
-    <div className="featureCard">
-      <img className="featureImg" src={IMG} alt="ImageOnCard" />
-      <div className="featureTextContainer">
-        <p className="featurePrimaryText">Nike air zoom pegasus 35</p>
-        <p className="featurePrimaryText">$411.00</p>
-      </div>
-    </div>
+    <>
+      {shop.sneakers.map((shoe, i) => {
+        // all shoes will display
+        return (
+          <div key={i} className="featureCard">
+            {i < 4 ? (
+              <div>
+                <img
+                  className="featureImg"
+                  src={shoe.main_picture_url}
+                  alt="ImageOnCard"
+                />
+                <div className="featureTextContainer">
+                  <p className="featurePrimaryText">{shoe.name}</p>
+                  <p className="featurePrimaryText">
+                    {convertToDolar(shoe.retail_price_cents)}$
+                  </p>
+                </div>
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+        );
+      })}
+    </>
   );
 };
 export default FeatureCard;

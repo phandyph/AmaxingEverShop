@@ -5,14 +5,12 @@ import FeatureCard from "../../Components/FeatureCard";
 import homePageCardContent from "../../Data/homePageCardContent.json";
 import shop from "../../Data/shop.json";
 const HomePage = () => {
-  console.log(shop[0])
   return (
     <div>
       <Banner />
       <div className="homePageContainer">
         <div className="cardsContainer">
           <Card imgAndPathOfHomeCard={homePageCardContent} />
-          {/* Nothing change on it, that's why just display it and change routes. */}
         </div>
 
         <div className="featureProducts">
@@ -20,11 +18,13 @@ const HomePage = () => {
         </div>
 
         <div className="featureCardsContainer">
-          {/* Just layout, not include with data yet. */}
-          <FeatureCard />
-          <FeatureCard />
-          <FeatureCard />
-          <FeatureCard />
+          <FeatureCard shop={shop} />
+        </div>
+
+        <div>
+          {shop.sneakers.map((s) => {
+            return <div></div>;
+          })}
         </div>
       </div>
     </div>
