@@ -4,23 +4,24 @@ import Card from "../../Components/Card";
 import FeatureCard from "../../Components/FeatureCard";
 import homePageCardContent from "../../Data/homePageCardContent.json";
 import shop from "../../Data/shop.json";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 const myShop = shop.sneakers;
 const HomePage = () => {
   const [fourDatasInHomePage, setFourDatasHomePage] = useState([]);
+  const {current: myDatas} = useRef(fourDatasInHomePage)
 
   const getFourDatasForHomePage = () => {
     myShop.forEach((sneaker, i)=>{
       if (i < 5) {
         console.log(sneaker);
-        setFourDatasHomePage([...fourDatasInHomePage, sneaker])
+        setFourDatasHomePage([...fourDatasInHomePage, myShop[i]])
       }
     })
   };
 
   useEffect(()=>{
     getFourDatasForHomePage();
-  },[fourDatasInHomePage.length < 5])
+  },[myDatas])
 
   console.log(fourDatasInHomePage);
 
