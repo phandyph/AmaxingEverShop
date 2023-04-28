@@ -1,5 +1,5 @@
 import "./SortBy.scss";
-import SelectIcon from "../../Assets/Icons/SelectIcon";
+import DownArrow from "../../Assets/Icons/DownArrow";
 const SortBy = ({ sortList }) => {
   return (
     <div className="sortContainer">
@@ -16,8 +16,8 @@ const SortBy = ({ sortList }) => {
             );
           })}
         </select>
-        <div className="selectIcon">
-          <SelectIcon />
+        <div className="downArrow">
+          <DownArrow />
         </div>
       </div>
     </div>

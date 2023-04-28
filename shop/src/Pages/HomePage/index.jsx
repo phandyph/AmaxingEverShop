@@ -9,8 +9,11 @@ const HomePage = () => {
       <Banner />
       <div className="homePageContainer">
         <div className="cardsContainer">
-          <Card imgAndPathOfHomeCard={homePageCardContent} />
-          {/* Nothing change on it, that's why just display it and change routes. */}
+          {homePageCardContent.length > 0 ? (
+            <Card imgAndPathOfHomeCard={homePageCardContent} />
+          ) : (
+            <></>
+          )}
         </div>
 
         <div className="featureProducts">

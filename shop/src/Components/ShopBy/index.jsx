@@ -1,7 +1,7 @@
 import Price from "../Price";
 import CheckboxComponent from "../CheckboxComponent";
 import colors from "../../Data/colors.json";
-import sizes from "../../Data/sizes.json";
+import {sizes} from "../../Data/sizeAndSortList.js";
 import brands from "../../Data/brands.json";
 import "./ShopBy.scss";
 const ShopBy = () => {

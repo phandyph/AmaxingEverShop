@@ -1,7 +1,7 @@
 import UserBanner from "../UserBanner";
 import ShopBy from "../ShopBy";
 import SortBy from "../SortBy";
-import sortList from "../../Data/sortList.json";
+import {sortList} from "../../Data/sizeAndSortList.js";
 import UserPreferenceCards from "../UserPrefereneCards";
 import "./UserPrefereneLayout.scss";
 

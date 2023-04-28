@@ -6,8 +6,8 @@ const CheckboxComponent = ({ checkboxItems }) => {
         return (
           <div key={item.id}>
             <label>
-              <input className="checkboxs" type="checkbox" />
-              <span className="checkbox">{item.label}</span>
+              <input className="checkboxInput" type="checkbox" />
+              <span className="checkboxLabel">{item.label}</span>
             </label>
           </div>
         );
