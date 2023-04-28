@@ -1,5 +1,4 @@
 export default function VisaIcon() {
-  const SH = ""
   return (
     <svg
       className="graphicSymbol"

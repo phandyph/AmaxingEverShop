@@ -1,6 +1,6 @@
 import { NavLink } from "react-router-dom";
-import "./MobileMenu.css"
-const MobileMenu = ({isMenuOpen, mobileMenu}) => {
+import "./MobileMenu.css";
+const MobileMenu = ({ isMenuOpen, mobileMenu }) => {
   return (
     <div className={isMenuOpen ? "showHumbergerMenu" : "hideHumbergerMenu"}>
       <ul className="mobileMenu">

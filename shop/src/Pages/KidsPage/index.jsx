@@ -1,5 +1,6 @@
-import "./KidsPage.css";
+import UserPreferenceLayout from "../../Components/UserPreferenceLayout";
+const KIDS_BANNER = [{ id: 1, title: "Kids", subTitle: "Kids" }];
 const KidsPage = () => {
-  return <div className="kids">Kids Page</div>;
+  return <UserPreferenceLayout bannerTitle={KIDS_BANNER} />;
 };
 export default KidsPage;

@@ -1,0 +1,21 @@
+$fullWidth: 100%;
+
+.featureCard {
+  width: $fullWidth;
+}
+
+.featureImg {
+  background-color: rgb(247, 245, 242);
+}
+
+.featureCard,
+img {
+  max-width: $fullWidth;
+  height: auto;
+}
+
+.featurePrimaryText {
+  line-height: 1.8rem;
+  font-size: 1rem;
+  font-weight: bold;
+}

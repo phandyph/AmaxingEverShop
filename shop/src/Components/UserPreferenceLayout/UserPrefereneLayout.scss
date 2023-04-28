@@ -1,0 +1,42 @@
+$fullWidth: 100%;
+$center: center;
+
+.userPreferenceContainer {
+  width: $fullWidth;
+  display: flex;
+  align-items: $center;
+  justify-content: $center;
+}
+
+.userPreference {
+  width: 60%;
+  margin: auto;
+}
+
+.contentContainer {
+  margin-top: 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.actionContainer {
+  width: 30%;
+}
+
+.shopBy,
+.sortBy {
+  padding: 10px 0;
+}
+
+.sortBy,
+span {
+  margin-right: 8px;
+}
+
+.sortContainer {
+  display: flex;
+  width: $fullWidth;
+  align-content: $center;
+  justify-content: flex-end;
+}
