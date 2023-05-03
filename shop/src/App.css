@@ -62,7 +62,7 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    grid-auto-rows: maxmax(200px, auto);
+    grid-auto-rows: minmax(200px, auto);
   }
 
   .actionContainer {

@@ -1,13 +1,8 @@
 import FeatureCard from "../FeatureCard";
-const UserPreferenceCards = () => {
+const UserPreferenceCards = ({shoeItems}) => {
   return (
     <div className="userPreCardsContainer">
-      <FeatureCard />
-      <FeatureCard />
-      <FeatureCard />
-      <FeatureCard />
-      <FeatureCard />
-      <FeatureCard />
+      <FeatureCard shoeItems={shoeItems} />
     </div>
   );
 };

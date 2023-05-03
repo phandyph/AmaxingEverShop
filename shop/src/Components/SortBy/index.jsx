@@ -1,25 +1,45 @@
 import "./SortBy.scss";
-import SelectIcon from "../../Assets/Icons/SelectIcon";
-const SortBy = ({ sortList }) => {
+import DownArrow from "../../Assets/Icons/DownArrow";
+import { useState, useEffect } from "react";
+import { sort } from "../../util/sort";
+
+const SortBy = ({ shoeItems, sortList, handleOnSortShoes }) => {
+  const [optionChosen, setOptionChosen] = useState("please select");
+  const [disItemAfterChosen, setDisItemAfterChosen] = useState(shoeItems);
+  sort({ optionChosen, disItemAfterChosen });
+
+  // Data update but render late (here is the reason)
+  useEffect(() => {
+    if (disItemAfterChosen.length > 0) {
+      setDisItemAfterChosen(sort({ optionChosen, disItemAfterChosen }));
+    }
+    handleOnSortShoes?.([...disItemAfterChosen]);
+  }, []); //any problem happen when I put dependencies
+
+  const handleOnSort = (option) => {
+    setOptionChosen(option.target.value);
+    handleOnSortShoes?.([...disItemAfterChosen]);
+  };
+
   return (
-    <div className="sortAction">
-      <div className="sortContainer">
-        <span className="sortBy">Sort By: </span>
-        <div className="select">
-          <select name="" id="">
-            {sortList.map((item) => {
-              return (
-                <option key={item.id} value={item.value}>
-                  {item.label}
-                </option>
-              );
-            })}
-          </select>
-          <div className="selectIcon">
-            <SelectIcon />
-          </div>
-        </div>
+    <div className="sortContainer">
+      <div className="sort">
+        <span>Sort By: </span>
       </div>
+      <form className="select">
+        <select name="" id="" onChange={handleOnSort}>
+          {sortList.map((item) => {
+            return (
+              <option key={item.id} value={item.value}>
+                {item.label}
+              </option>
+            );
+          })}
+        </select>
+        <div className="downArrow">
+          <DownArrow />
+        </div>
+      </form>
     </div>
   );
 };

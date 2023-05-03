@@ -4,33 +4,23 @@ import Card from "../../Components/Card";
 import FeatureCard from "../../Components/FeatureCard";
 import homePageCardContent from "../../Data/homePageCardContent.json";
 import shop from "../../Data/shop.json";
-import { useState, useEffect, useRef } from "react";
-const myShop = shop.sneakers;
+const shoesForHomePage = shop.sneakers.slice(0, 4);
+
 const HomePage = () => {
-  const [fourDatasInHomePage, setFourDatasHomePage] = useState([]);
-  const {current: myDatas} = useRef(fourDatasInHomePage)
-
-  const getFourDatasForHomePage = () => {
-    myShop.forEach((sneaker, i)=>{
-      if (i < 5) {
-        console.log(sneaker);
-        setFourDatasHomePage([...fourDatasInHomePage, myShop[i]])
-      }
-    })
-  };
-
-  useEffect(()=>{
-    getFourDatasForHomePage();
-  },[myDatas])
-
-  console.log(fourDatasInHomePage);
-
   return (
     <div>
       <Banner />
       <div className="homePageContainer">
         <div className="cardsContainer">
-          <Card imgAndPathOfHomeCard={homePageCardContent} />
+          {homePageCardContent.length > 0 ? (
+            <Card imgAndPathOfHomeCard={homePageCardContent} />
+          ) : (
+            <div className="errorInfo">
+              <span>
+                Opps! No Data Available! Let's double check. Thank You!
+              </span>
+            </div>
+          )}
         </div>
 
         <div className="featureProducts">
@@ -38,7 +28,7 @@ const HomePage = () => {
         </div>
 
         <div className="featureCardsContainer">
-          <FeatureCard shoeItems={fourDatasInHomePage} />
+          <FeatureCard shoeItems={shoesForHomePage} />
         </div>
 
         <div>

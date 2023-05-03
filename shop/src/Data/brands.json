@@ -1,4 +1,4 @@
 [
-    {"id": 1, "label": "Converse"},
-    {"id": 2, "label": "Nike"}
+    {"id": 1, "value": "Peter Moore" ,"label": "Converse"},
+    {"id": 2, "value": "Tinker Hatfield", "label": "Nike"}
 ]

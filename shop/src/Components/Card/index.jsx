@@ -15,10 +15,10 @@ const Card = ({ imgAndPathOfHomeCard }) => {
             <NavLink
               reloadDocument
               activeclassname="active"
-              className="btnLink"
+              className="linkBtn"
               to={content.path}
             >
-              <button className="btnCard ">{content.label}</button>
+              <button className="cardBtn">{content.label}</button>
             </NavLink>
           </div>
         );

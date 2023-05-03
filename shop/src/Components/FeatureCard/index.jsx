@@ -1,16 +1,10 @@
 import "./FeatureCard.scss";
+import { dolorFormat } from "../../util/dolarFormat";
 const FeatureCard = ({ shoeItems }) => {
-
-  function convertToDolar(price) {
-    return price / 4000;
-  }
-
-  console.log(shoeItems);
 
   return (
     <>
       {shoeItems.map((shoe, i) => {
-        // all shoes will display
         return (
           <div>
             <img
@@ -21,7 +15,7 @@ const FeatureCard = ({ shoeItems }) => {
             <div className="featureTextContainer">
               <p className="featurePrimaryText">{shoe.name}</p>
               <p className="featurePrimaryText">
-                {convertToDolar(shoe.retail_price_cents)}$
+                {dolorFormat(shoe.retail_price_cents)}
               </p>
             </div>
           </div>
