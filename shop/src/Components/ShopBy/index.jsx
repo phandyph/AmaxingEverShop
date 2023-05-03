@@ -41,9 +41,6 @@ const ShopBy = ({
     handleOnGetItemFromCheckbox?.([...checkboxResult]);
   };
 
-  console.log("Hello what I have selected: ", allCheckedItem);
-  console.log("Hello result ", checkboxResult);
-
   return (
     <div className="shopBy">
       <div className="sortBy">
