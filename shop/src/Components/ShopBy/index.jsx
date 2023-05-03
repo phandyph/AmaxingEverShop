@@ -15,16 +15,14 @@ const ShopBy = ({
 
   const checkboxResult = shoeItems.filter((shoe) => {
     if (allCheckedItem.length === 0) return shoeItems;
-    return allCheckedItem.find(
-      (col) =>
-        shoe.color === col ||
-        allCheckedItem.find(
-          (designer) =>
-            shoe.designer === designer ||
-            allCheckedItem.find(() => shoe.size_range.includes(20))
-        )
-    );
+    return allCheckedItem.find((col) => shoe.color === col);
   });
+
+  const getSizeRange = shoeItems.filter((shoe) => {
+    return shoe.size_range;
+  });
+
+  console.log("My size range: ", getSizeRange);
 
   const handleOnCheck = (e) => {
     const value = e.target.value;
