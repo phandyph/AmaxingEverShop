@@ -1,14 +1,18 @@
+// import { useState } from "react";
 import "./CheckboxComponent.css";
-const CheckboxComponent = ({ checkboxItems }) => {
+const CheckboxComponent = ({ checkboxItems, handleOnCheck }) => {
   return (
     <div className="colorContainer">
       {checkboxItems.map((item) => {
         return (
           <div key={item.id}>
-            <label>
-              <input className="checkboxInput" type="checkbox" />
-              <span className="checkboxLabel">{item.label}</span>
-            </label>
+            <input
+              type="checkbox"
+              onChange={handleOnCheck}
+              className="checkboxInput"
+              value={item.value}
+            />
+            <span className="checkboxLabel">{item.label}</span>
           </div>
         );
       })}

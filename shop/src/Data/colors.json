@@ -1,9 +1,9 @@
 [
-    {"id": 1, "label":"White"},
-    {"id": 2, "label":"Pink"},
-    {"id": 3, "label":"Black"},
-    {"id": 4, "label":"Green"},
-    {"id": 5, "label":"Brown"},
-    {"id": 6, "label":"Grey"},
-    {"id": 7, "label":"Purple"}
+    {"id": 1, "value": "White", "label":"White"},
+    {"id": 2, "value": "Pink", "label":"Pink"},
+    {"id": 3, "value": "Black", "label":"Black"},
+    {"id": 4, "value": "Green", "label":"Green"},
+    {"id": 5, "value": "Brown", "label":"Brown"},
+    {"id": 6, "value": "Grey", "label":"Grey"},
+    {"id": 7, "value": "Purple","label":"Purple"}
 ]

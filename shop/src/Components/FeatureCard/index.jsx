@@ -1,15 +1,32 @@
 import "./FeatureCard.scss";
-const IMG =
-  "https://demo.evershop.io/assets/catalog/1034/3600/plv7632-Green-list.png";
-const FeatureCard = () => {
+import { toDolorFormat } from "../../util/toDolarFormat";
+const FeatureCard = ({ shoeItems }) => {
   return (
-    <div className="featureCard">
-      <img className="featureImg" src={IMG} alt="ImageOnCard" />
-      <div className="featureTextContainer">
-        <p className="featurePrimaryText">Nike air zoom pegasus 35</p>
-        <p className="featurePrimaryText">$411.00</p>
-      </div>
-    </div>
+    <>
+      {shoeItems.length > 0 ? (
+        <>
+          {shoeItems.map((shoe, i) => {
+            return (
+              <div key={i}>
+                <img
+                  className="featureImg"
+                  src={shoe.main_picture_url}
+                  alt="ImageOnCard"
+                />
+                <div className="featureTextContainer">
+                  <p className="featurePrimaryText">{shoe.name}</p>
+                  <p className="featurePrimaryText">
+                    {toDolorFormat(shoe.retail_price_cents)}
+                  </p>
+                </div>
+              </div>
+            );
+          })}
+        </>
+      ) : (
+        <div>No Data Available</div>
+      )}
+    </>
   );
 };
 export default FeatureCard;

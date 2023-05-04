@@ -7,7 +7,8 @@ $sliderRangeBg: rgb(0, 0, 0);
 }
 
 .priceRangeContainer {
-  height: 5vh;
+  width: 200px;
+  padding-right: 10px;
 }
 
 .sliderTrack,
@@ -29,29 +30,29 @@ $sliderRangeBg: rgb(0, 0, 0);
 }
 
 /* Removing the default appearance */
-.thumb,
-.thumb::-webkit-slider-thumb {
+.rangeInputBar,
+.rangeInputBar::-webkit-slider-thumb {
   -webkit-appearance: none;
   -webkit-tap-highlight-color: transparent;
 }
 
-.thumb {
+.rangeInputBar {
   pointer-events: none;
   position: absolute;
   height: 0;
   width: 200px;
 }
 
-.thumbZindex3 {
+.rangeInputBarIndex3 {
   z-index: 3;
 }
 
-.thumbZindex4 {
+.rangeInputBarIndex4 {
   z-index: 4;
 }
 
 /* For Chrome browsers */
-.thumb::-webkit-slider-thumb {
+.rangeInputBar::-webkit-slider-thumb {
   border: 1px solid black;
   border-radius: 50%;
   box-shadow: 0 0 1px 1px rgb(206, 212, 218);
@@ -65,4 +66,14 @@ $sliderRangeBg: rgb(0, 0, 0);
 .price,
 span {
   margin-bottom: 15px;
+}
+
+.tooltips {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+}
+.tooltips {
+  padding: 5px 10px;
+  z-index: 1;
 }

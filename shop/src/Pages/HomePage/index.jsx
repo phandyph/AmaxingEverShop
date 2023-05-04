@@ -3,6 +3,9 @@ import Banner from "../../Components/Banner";
 import Card from "../../Components/Card";
 import FeatureCard from "../../Components/FeatureCard";
 import homePageCardContent from "../../Data/homePageCardContent.json";
+import shop from "../../Data/shop.json";
+const shoesForHomePage = shop.sneakers.slice(0, 4);
+
 const HomePage = () => {
   return (
     <div>
@@ -25,11 +28,13 @@ const HomePage = () => {
         </div>
 
         <div className="featureCardsContainer">
-          {/* Just layout, not include with data yet. */}
-          <FeatureCard />
-          <FeatureCard />
-          <FeatureCard />
-          <FeatureCard />
+          <FeatureCard shoeItems={shoesForHomePage} />
+        </div>
+
+        <div>
+          {shop.sneakers.map((s) => {
+            return <div></div>;
+          })}
         </div>
       </div>
     </div>
