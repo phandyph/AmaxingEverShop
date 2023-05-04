@@ -1,17 +1,17 @@
 import "./SortBy.scss";
 import DownArrow from "../../Assets/Icons/DownArrow";
 import { useState, useEffect } from "react";
-import { sort } from "../../util/sort";
+import { sortShoesByNameAndPrice } from "../../util/sortShoesByNameAndPrice";
 
 const SortBy = ({ shoeItems, sortList, handleOnSortShoes }) => {
   const [optionChosen, setOptionChosen] = useState("please select");
   const [disItemAfterChosen, setDisItemAfterChosen] = useState(shoeItems);
-  sort({ optionChosen, disItemAfterChosen });
+  sortShoesByNameAndPrice({ optionChosen, disItemAfterChosen });
 
   // Data update but render late (here is the reason)
   useEffect(() => {
     if (disItemAfterChosen.length > 0) {
-      setDisItemAfterChosen(sort({ optionChosen, disItemAfterChosen }));
+      setDisItemAfterChosen(sortShoesByNameAndPrice({ optionChosen, disItemAfterChosen }));
     }
     handleOnSortShoes?.([...disItemAfterChosen]);
   }, []); //any problem happen when I put dependencies

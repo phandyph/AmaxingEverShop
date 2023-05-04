@@ -11,33 +11,28 @@ const ShopBy = ({
   handleOnPriceRange,
   handleOnGetItemFromCheckbox,
 }) => {
-  const [allCheckedItem, setAllCheckedItem] = useState([]);
+  // store all value of checkbox you have been checked.
+  const [allCheckedItems, setAllCheckedItems] = useState([]);
 
   const checkboxResult = shoeItems.filter((shoe) => {
-    if (allCheckedItem.length === 0) return shoeItems;
-    return allCheckedItem.find(
+    if (allCheckedItems.length === 0) return shoeItems;
+    return allCheckedItems.find(
       (col) =>
         shoe.color === col ||
-        allCheckedItem.find(
-          (designer) =>
-            shoe.designer === designer ||
-            allCheckedItem.find(() => shoe.size_range.includes(20))
-        )
+        allCheckedItems.find((designer) => shoe.designer === designer)
     );
   });
 
   const handleOnCheck = (e) => {
-    const value = e.target.value;
-    const checked = e.target.checked;
-
-    let itemsChecked = [...allCheckedItem];
+    const { checked, value } = e.target;
+    let itemsChecked = [...allCheckedItems];
     if (checked) {
-      itemsChecked = [...allCheckedItem, value];
+      itemsChecked = [...allCheckedItems, value];
     } else {
-      itemsChecked.splice(allCheckedItem.indexOf(value), 1);
+      itemsChecked.splice(allCheckedItems.indexOf(value), 1);
     }
-    setAllCheckedItem(itemsChecked);
-
+    setAllCheckedItems(itemsChecked);
+    // Get data from child to parent component (shopBy.jsx)
     handleOnGetItemFromCheckbox?.([...checkboxResult]);
   };
 
@@ -47,11 +42,7 @@ const ShopBy = ({
         <h3>Shop By</h3>
       </div>
       <div>
-        <Price
-          handleOnPriceRange={handleOnPriceRange}
-          shoeItems={shoeItems}
-          step={1}
-        />
+        <Price handleOnPriceRange={handleOnPriceRange} shoeItems={shoeItems} />
         <div className="titleAction">COLOR</div>
         <CheckboxComponent
           handleOnCheck={handleOnCheck}

@@ -6,15 +6,13 @@ const CheckboxComponent = ({ checkboxItems, handleOnCheck }) => {
       {checkboxItems.map((item) => {
         return (
           <div key={item.id}>
-            <div>
-              <input
-                type="checkbox"
-                onChange={handleOnCheck}
-                className="checkboxInput"
-                value={item.value}
-              />
-              <span className="checkboxLabel">{item.label}</span>
-            </div>
+            <input
+              type="checkbox"
+              onChange={handleOnCheck}
+              className="checkboxInput"
+              value={item.value}
+            />
+            <span className="checkboxLabel">{item.label}</span>
           </div>
         );
       })}

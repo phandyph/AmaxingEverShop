@@ -1,69 +1,64 @@
 import "./Price.scss";
 import { useState, useEffect } from "react";
-import { dolorFormat } from "../../util/dolarFormat";
+import { toDolorFormat } from "../../util/toDolarFormat";
+const RANGE_STEP = 1
 
-const Price = ({ shoeItems, step, handleOnPriceRange }) => {
-  const [minPrice, setMinPrice] = useState();
-  const [maxPrice, setMaxPrice] = useState();
+const Price = ({ shoeItems, handleOnPriceRange }) => {
+  const [value, setValue] = useState({ min: 0, max: 30000 });
+  const [price, setPrice] = useState({ min: 0, max: 0 });
 
-  const [minValue, setMinValue] = useState(0);
-  const [maxValue, setMaxValue] = useState(30000);
-
-  const getMinPrice = () => {
-    setMinPrice(Math.min(...shoeItems.map((shoe) => shoe.retail_price_cents)));
-  };
-
-  const getMaxPrice = () => {
-    setMaxPrice(Math.max(...shoeItems.map((shoe) => shoe.retail_price_cents)));
+  const getMinMaxPrice = (min, max) => {
+    min = Math.min(...shoeItems.map((shoe) => shoe.retail_price_cents));
+    max = Math.max(...shoeItems.map((shoe) => shoe.retail_price_cents));
+    setPrice({ min: min, max: max });
   };
 
   const priceRangeResult = shoeItems.filter((shoe) => {
     return (
-      shoe.retail_price_cents >= minValue && shoe.retail_price_cents <= maxValue
+      shoe.retail_price_cents >= value.min &&
+      shoe.retail_price_cents <= value.max
     );
   });
 
   const handleOnMinChange = (e) => {
     e.preventDefault();
-    let minRangeValue = +e.target.value - step;
-    if (minRangeValue >= 0) setMinValue(minRangeValue);
-    handleOnPriceRange?.([...priceRangeResult])
+    let minRangeValue = +e.target.value - RANGE_STEP;
+    if (minRangeValue >= 0) setValue({ min: minRangeValue, max: value.max });
+    handleOnPriceRange?.([...priceRangeResult]);
   };
 
   const handleOnMaxChange = (e) => {
     e.preventDefault();
-    let maxRangeValue = +e.target.value + step;
-    setMaxValue(maxRangeValue);
-    handleOnPriceRange?.([...priceRangeResult])
+    let maxRangeValue = +e.target.value + RANGE_STEP;
+    setValue({ min: value.min, max: maxRangeValue });
+    handleOnPriceRange?.([...priceRangeResult]);
   };
 
-
   useEffect(() => {
-    getMinPrice();
-    getMaxPrice();
+    getMinMaxPrice();
   }, []);
-
 
   return (
     <div className="priceRangeContainer">
+      <div className="titleAction">PRICE</div>
       <div className="priceRanges">
         <input
-          className="thumb thumbZindex3"
+          className="rangeInputBar rangeInputBarIndex3"
           type="range"
-          min={minPrice}
-          max={maxPrice}
-          value={minValue}
-          step={step}
+          min={price.min}
+          max={price.max}
+          value={value.min}
+          step={RANGE_STEP}
           onChange={handleOnMinChange}
         />
 
         <input
           type="range"
-          className="thumb thumbZindex4"
-          min={minPrice}
-          max={maxPrice}
-          value={maxValue}
-          step={step}
+          className="rangeInputBar rangeInputBarIndex4"
+          min={price.min}
+          max={price.max}
+          value={value.max}
+          step={RANGE_STEP}
           onChange={handleOnMaxChange}
         />
       </div>
@@ -74,8 +69,8 @@ const Price = ({ shoeItems, step, handleOnPriceRange }) => {
       </div>
 
       <div className="tooltips">
-        <output className="tooltipText">{dolorFormat(minValue)}</output>
-        <output className="tooltipText">{dolorFormat(maxValue)}</output>
+        <output className="tooltipText">{toDolorFormat(value.min)}</output>
+        <output className="tooltipText">{toDolorFormat(value.max)}</output>
       </div>
     </div>
   );
